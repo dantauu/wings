@@ -11,7 +11,7 @@ body {
 
 /* Стиль для шапки сайта */
 header {
-	background-image: url('/images/cloud.jpg');
+	background-image: url('./images/cloud.jpg');
 	position: relative;
 	padding: 30px 20px;
 	color: white;
