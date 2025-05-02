@@ -11,26 +11,15 @@ body {
 
 /* Стиль для шапки сайта */
 header {
-	background: linear-gradient(to bottom, #007bff, #87ceeb);
+	background-image: url('/images/cloud.jpg');
 	position: relative;
 	padding: 30px 20px;
 	color: white;
 	text-align: center;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Облака в шапке */
-header::before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background-image: url('https://www.transparenttextures.com/patterns/cloud-noise.png');
-	background-size: auto;
-	opacity: 0.3;
-	z-index: 0;
+	background-position: bottom;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .header-content {
@@ -171,10 +160,6 @@ main {
 .aircraft-description {
 	line-height: 1.6;
 	color: #333;
-}
-
-.airplane-image {
-	transform: rotate(17deg);
 }
 
 .aircraft-description-text {
