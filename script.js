@@ -180,18 +180,27 @@ function createCategoryButtons() {
 	categoryButtons.className = 'category-buttons'
 
 	categoryButtons.innerHTML = `
+		<div class="category-buttons__wrapper">
+		<div class="form-link__wrapper">
+			<div class="form-link__wrapper-inner">
         <button class="category-btn active" data-category="modern">Современные самолёты</button>
         <button class="category-btn" data-category="wwii">Самолеты ВОВ</button>
+			</div>
+        <a href="https://forms.yandex.ru/u/68151cc5e010db97a4d1133d/" target="_blank" class="form-link">
+            <button class="category-btn form-btn">Начать тест</button>
+        </a>
+		</div>
+		</div>
     `
 
 	navContainer.prepend(categoryButtons)
 
-	// Обработчики кликов по кнопкам
-	document.querySelectorAll('.category-btn').forEach(btn => {
+	// Обработчики кликов по кнопкам категорий
+	document.querySelectorAll('.category-btn:not(.form-btn)').forEach(btn => {
 		btn.addEventListener('click', () => {
-			// Удаляем активный класс у всех кнопок
+			// Удаляем активный класс у всех кнопок категорий
 			document
-				.querySelectorAll('.category-btn')
+				.querySelectorAll('.category-btn:not(.form-btn)')
 				.forEach(b => b.classList.remove('active'))
 			// Добавляем активный класс нажатой кнопке
 			btn.classList.add('active')
@@ -257,14 +266,6 @@ function showAircraftDetail(aircraftId) {
         </div>
         <div class="aircraft-description animate__animated animate__fadeInUp">
             <p class="aircraft-description-text">${aircraft.description}</p>
-            <a href="https://forms.yandex.ru/u/68151cc5e010db97a4d1133d/" target="_blank" class="wiki-link">
-                <span>Перейти</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                    <polyline points="15 3 21 3 21 9"></polyline>
-                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                </svg>
-            </a>
         </div>
     `
 
